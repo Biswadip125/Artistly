@@ -1,23 +1,27 @@
+"use client";
+
 import Link from "next/link";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import Image from "next/image";
 import { LucideIcon } from "lucide-react";
+import { useFilterContext } from "@/context/FilterContext";
 
 type CategoryCardProps = {
-  link: string;
   title: string;
   image: string;
   Icon: LucideIcon;
+  Category: string;
 };
 
 const CategoryCard: React.FC<CategoryCardProps> = ({
   title,
-  link,
+  Category,
   image,
   Icon,
 }) => {
+  const { updateFilter } = useFilterContext();
   return (
-    <Link href={link}>
+    <Link href={"/artists"} onClick={() => updateFilter("Category", Category)}>
       <Card className="w-full px-4 bg-gray-100 shadow-xl hover:shadow-2xl transition-all duration-200 hover:scale-105 ">
         <CardContent className="w-full h-[150px] relative">
           <Image

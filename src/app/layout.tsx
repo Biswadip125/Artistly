@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/ui/customComponents/Header";
 import { Toaster } from "react-hot-toast";
+import { FilterProvider } from "@/context/FilterContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,9 +30,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen h-auto w-full bg-gray-50 flex flex-col`}
       >
-        <Toaster position="bottom-right" reverseOrder={false} />
-        <Header />
-        {children}
+        <FilterProvider>
+          <Toaster position="bottom-right" reverseOrder={false} />
+          <Header />
+          {children}
+        </FilterProvider>
       </body>
     </html>
   );

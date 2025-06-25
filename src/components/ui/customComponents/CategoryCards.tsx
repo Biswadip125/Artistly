@@ -1,17 +1,24 @@
+"use client";
+
 import React from "react";
 import CategoryCard from "./CategoryCard";
 import { Disc3, Megaphone, MicVocal, Move } from "lucide-react";
 
 const CategoryCards = () => {
   const categories = [
-    { title: "Singers", image: "/singer.jpg", link: "/", Icon: MicVocal },
-    { title: "Dancers", image: "/dancer.jpg", link: "/", Icon: Move },
-    { title: "DJs", image: "/dj.jpg", link: "/", Icon: Disc3 },
+    {
+      title: "Singers",
+      image: "/singer.jpg",
+      Icon: MicVocal,
+      Category: "Singer",
+    },
+    { title: "Dancers", image: "/dancer.jpg", Icon: Move, Category: "Dancer" },
+    { title: "DJs", image: "/dj.jpg", Icon: Disc3, Category: "DJ" },
     {
       title: "Speakers",
       image: "/speaker.jpeg",
-      link: "/",
       Icon: Megaphone,
+      Category: "Speaker",
     },
   ];
 
@@ -19,13 +26,13 @@ const CategoryCards = () => {
     <div className="mt-4">
       <h1 className="text-2xl font-bold ">Categories</h1>
       <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-8 gap-10">
-        {categories.map((category) => (
+        {categories.map((item, id) => (
           <CategoryCard
-            key={category.title}
-            title={category.title}
-            image={category.image}
-            link={category.link}
-            Icon={category.Icon}
+            key={id}
+            title={item.title}
+            image={item.image}
+            Icon={item.Icon}
+            Category={item.Category}
           />
         ))}
       </div>
