@@ -2,13 +2,13 @@
 
 import { ArtistFormData } from "./ArtistOnboardingForm";
 import MultiSelectCheckbox from "./MultiSelectCheckbox";
-import { Control, Controller } from "react-hook-form";
+import { Control, Controller, RegisterOptions } from "react-hook-form";
 
 const categories = ["Singer", "Dancer", "DJ", "Speaker"];
 type CategoryMultiSelectProps = {
   control: Control<ArtistFormData>;
   name: keyof ArtistFormData;
-  rules?: any;
+  rules?: RegisterOptions<ArtistFormData, keyof ArtistFormData>;
 };
 
 const CategoryMultiSelect = ({

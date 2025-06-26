@@ -1,12 +1,12 @@
 "use cliet";
-import { Controller, Control } from "react-hook-form";
+import { Controller, Control, RegisterOptions } from "react-hook-form";
 import MultiSelectCheckbox from "./MultiSelectCheckbox";
 import { ArtistFormData } from "./ArtistOnboardingForm";
 
 type LanguageMultiSelectProps = {
   control: Control<ArtistFormData>;
   name: keyof ArtistFormData;
-  rules: any;
+  rules: RegisterOptions<ArtistFormData, keyof ArtistFormData>;
 };
 
 const LanguageMultiSelect = ({

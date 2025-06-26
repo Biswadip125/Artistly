@@ -8,10 +8,12 @@ import {
 } from "../select";
 import { ArtistFormData } from "./ArtistOnboardingForm";
 
+import { RegisterOptions } from "react-hook-form";
+
 type FeeRangeDropdownProps = {
   control: Control<ArtistFormData>;
   name: keyof ArtistFormData;
-  rules: any;
+  rules?: RegisterOptions<ArtistFormData, keyof ArtistFormData>;
 };
 
 const FeeRangeDropdown = ({ control, name, rules }: FeeRangeDropdownProps) => {
