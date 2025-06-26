@@ -37,8 +37,6 @@ const ArtistOnboardingForm = () => {
     },
   });
 
-  console.log(errors);
-
   const onSubmit = (data: ArtistFormData) => {
     console.log("Submitted:", data);
     toast.success("Form Data Logged Successfully");
