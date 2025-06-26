@@ -19,9 +19,15 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
   image,
   Icon,
 }) => {
-  const { updateFilter } = useFilterContext();
+  const { updateFilter, setIsClearFilterShown } = useFilterContext();
   return (
-    <Link href={"/artists"} onClick={() => updateFilter("Category", Category)}>
+    <Link
+      href={"/artists"}
+      onClick={() => {
+        updateFilter("Category", Category);
+        setIsClearFilterShown(true);
+      }}
+    >
       <Card className="w-full px-4 bg-gray-100 shadow-xl hover:shadow-2xl transition-all duration-200 hover:scale-105 ">
         <CardContent className="w-full h-[150px] relative">
           <Image

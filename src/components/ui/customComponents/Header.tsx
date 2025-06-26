@@ -13,7 +13,7 @@ const Header = () => {
     },
     {
       name: "Onboard",
-      link: "/onboard",
+      link: "/onboarding",
     },
   ];
 
